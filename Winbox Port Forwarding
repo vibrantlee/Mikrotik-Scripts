@@ -1,0 +1,9 @@
+# Configure Port Forwarding to Remote MikroTik Access
+# Change the dst-port for the WAN side of connecting in
+
+
+/ip firewall nat
+add action=dst-nat chain=dstnat comment="Remote MikroTik 1" dst-port=8292 in-interface=ether1-gateway protocol=tcp to-addresses=192.168.88.241 to-ports=8291
+add action=dst-nat chain=dstnat comment="Remote MikroTik 2" dst-port=8293 in-interface=ether1-gateway protocol=tcp to-addresses=192.168.88.242 to-ports=8291
+add action=dst-nat chain=dstnat comment="Remote MikroTik 3" dst-port=8294 in-interface=ether1-gateway protocol=tcp to-addresses=192.168.88.243 to-ports=8291
+add action=dst-nat chain=dstnat comment="Remote MikroTik 4" dst-port=8295 in-interface=ether1-gateway protocol=tcp to-addresses=192.168.88.244 to-ports=8291
