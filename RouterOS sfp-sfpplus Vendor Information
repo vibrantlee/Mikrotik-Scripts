@@ -1,0 +1,3 @@
+##List SFP Vendor and Part Numbers for each interface
+
+:for i from=1 to=12 do={:local monitor [/interface ethernet monitor ("sfp-sfpplus".$i) once as-value];:put (("sfp-sfpplus".$i." " ) . ($monitor->"sfp-vendor-name") .(" "). ($monitor->"sfp-vendor-part-number"))}
