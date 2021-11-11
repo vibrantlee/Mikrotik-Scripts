@@ -1,3 +1,5 @@
 ##List SFP Vendor and Part Numbers for each interface
+##This was in use for a CCR2004 with 12 sfp-sfpplus ports
+##The "from=1 to=12" portion can be modified for the number of sfpplus ports on a Mikrotik, like a CCR1072-1G-8S+ with 8 sfp-sfpplus interfaces
 
 :for i from=1 to=12 do={:local monitor [/interface ethernet monitor ("sfp-sfpplus".$i) once as-value];:put (("sfp-sfpplus".$i." " ) . ($monitor->"sfp-vendor-name") .(" "). ($monitor->"sfp-vendor-part-number"))}
